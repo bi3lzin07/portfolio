@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de [Nome do Aluno] - Desenvolvedor Web">
+    <meta name="keywords" content="portfólio, desenvolvedor, web, projetos, habilidades, contato">
+    <meta name="author" content="[Nome do Aluno]">
+    <title>Portfólio Pessoal</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2980b9, #6dd5fa);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        #home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #ecf0f1;
+            padding: 50px 20px;
+        }
+
+        .presentation img {
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .presentation h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .presentation p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        #sobre, #projetos, #contato {
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            border-radius: 15px;
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        #sobre:hover, #projetos:hover, #contato:hover {
+            transform: translateY(-10px);
+        }
+
+        #sobre h2, #projetos h2, #contato h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2980b9;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Estilo de formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        form input,
+        form textarea {
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        form button {
+            padding: 15px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .presentation img {
+                width: 180px;
+                height: 180px;
+            }
+
+            #home {
+                flex-direction: column;
+            }
+
+            #projetos .project-gallery {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .project-item {
+                width: 100%;
+            }
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #3498db;
+        }
+
+        .project-gallery {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .project-item {
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página Inicial -->
+    <section id="home">
+        <div class="presentation">
+            <img src="https://via.placeholder.com/220" alt="Foto do Aluno">
+            <h1>Nome do Aluno</h1>
+            <p>Desenvolvedor web apaixonado por tecnologia e inovação.</p>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p><strong>Formação Acadêmica:</strong> Bacharel em Ciências da Computação pela Universidade XYZ.</p>
+        <p><strong>Experiência Profissional:</strong> Desenvolvedor Frontend na Empresa ABC.</p>
+        <p><strong>Habilidades Técnicas:</strong> HTML, CSS, JavaScript, React, Node.js.</p>
+        <p><strong>Projetos Realizados:</strong> Desenvolvimento de sites e sistemas para clientes no ano de 2024.</p>
+        <p><strong>Especialidades:</strong> Design responsivo, otimização de performance e acessibilidade.</p>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <div class="project-gallery">
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300x200" alt="Projeto 1">
+                <h3>Projeto 1</h3>
+                <p>Descrição do projeto realizado. Tecnologias: HTML, CSS, JavaScript.</p>
+                <p><strong>Data de realização:</strong> Março de 2024</p>
+                <a href="#">Ver código-fonte</a>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300x200" alt="Projeto 2">
+                <h3>Projeto 2</h3>
+                <p>Descrição do projeto realizado. Tecnologias: React, Node.js.</p>
+                <p><strong>Data de realização:</strong> Junho de 2024</p>
+                <a href="#">Ver código-fonte</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="contact-form">
+            <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <input type="text" id="assunto" name="assunto" placeholder="Assunto" required>
+            <textarea id="mensagem" name="mensagem" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p>Ou entre em contato diretamente pelo WhatsApp ou Instagram:</p>
+        <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a> | <a href="https://instagram.com/usuario" target="_blank">Instagram</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Nome do Aluno</p>
+        <a href="mailto:email@dominio.com">Email</a> | <a href="https://github.com/usuario" target="_blank">GitHub</a>
+    </footer>
+
+    <script>
+        // Validação de envio do formulário
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Mensagem enviada com sucesso!');
+        });
+    </script>
+
+</body>
+
+</html>
